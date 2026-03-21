@@ -12,9 +12,17 @@
             </div>
             
             @if (Route::has('login'))
-                <a href="{{route('login')}}" class="lg:flex text-sm font-sans hidden bg-lime-500 hover:bg-lime-600 text-white font-semibold px-6 py-3 transition-colors duration-300 ease-linear focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 rounded">
-                    Iniciar sesión
-                </a>
+                <div class="hidden lg:flex">
+                    @auth
+                        <a href="{{route('dashboard')}}" class="text-gray-500 text-sm font-semibold hover:text-lime-500 transition-colors duration-300 ease-linear focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 rounded">
+                            Dashboard
+                        </a>
+                    @else
+                        <a href="{{route('login')}}" class="text-gray-500 text-sm font-semibold hover:text-lime-500 transition-colors duration-300 ease-linear focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 rounded">
+                            Iniciar sesión
+                        </a>
+                    @endauth
+                </div>
             @endif
             
             <button @click="open = !open" class="block lg:hidden">
@@ -34,11 +42,18 @@
         x-transition:leave-end="opacity-0 -translate-y-4"
         class="lg:hidden mt-4 flex flex-col divide-y px-4"
         >
-        {{-- <div x-show="open" class="lg:hidden mt-4 flex flex-col divide-y"> --}}
             @if (Route::has('login'))
-            <a href="{{route('login')}}" class="py-4 font-semibold text-gray-500 hover:text-lime-500 transition">
-                Iniciar sesión
-            </a>
+                @auth
+                    <a href="{{ route('dashboard') }}" 
+                    class="py-4 font-semibold text-gray-500 hover:text-lime-500 transition">
+                        Dashboard
+                    </a>
+                @else
+                    <a href="{{ route('login') }}" 
+                    class="py-4 font-semibold text-gray-500 hover:text-lime-500 transition">
+                        Iniciar sesión
+                    </a>
+                @endauth
             @endif
             <a href="#index" class="text-lime-500 nav-link-guest py-4 font-semibold hover:text-lime-500 transition">
                 Inicio

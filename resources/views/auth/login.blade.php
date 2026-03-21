@@ -21,20 +21,19 @@
         <div class="mt-4">
             <x-input-label for="password" :value="__('Contraseña')" />
             <x-text-input id="password" class="block mt-2 w-full" type="password" name="password" autocomplete="current-password" />
-
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
         <!-- Remember Me -->
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
+                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-lime-500 shadow-sm focus:ring-lime-600" name="remember">
                 <span class="ms-2 text-sm text-gray-600">{{ __('Recordarme') }}</span>
             </label>
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <x-primary-button class="ms-3">
+            <x-primary-button>
                 {{ __('Iniciar sesión') }}
             </x-primary-button>
         </div>

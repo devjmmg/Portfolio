@@ -18,6 +18,9 @@ export default {
                 poppins: ['Poppins', 'sans-serif'],
                 nunito: ['Nunito Sans', 'sans-serif'],
             },
+            screens: {
+                'xs': '375px',
+            },
         },
     },
 
