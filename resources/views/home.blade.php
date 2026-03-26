@@ -59,161 +59,184 @@
         
     </main>
     
-    <section id="about" class="scroll-mt-16">
+    <section id="about" class="scroll-mt-20 md:scroll-mt-16 lg:scroll-mt-0">
         <div class="min-h-screen flex items-center max-w-5xl mx-auto px-5 mt-20 md:mt-0">
-
+            
             <div class="w-full">
-
-                <!-- TÍTULO -->
+                
                 <h2 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-lime-500 to-orange-500 bg-clip-text text-transparent">
                     Sobre mí
                 </h2>
-
+                
                 <div class="w-20 h-1 bg-gradient-to-r from-lime-500 to-orange-500 mt-4 rounded"></div>
-
-                <p class="mt-8 text-md text-gray-500 font-sans">
-                    Soy Juan Manuel Martínez García, desarrollador web Full Stack enfocado en crear soluciones funcionales y eficientes.
+                
+                <p class="mt-8 text-md text-gray-500 font-sanst text-left">
+                    Soy Juan Manuel Martínez García, desarrollador web Full Stack apasionado por la programación y la creación de sistemas funcionales.
                 </p>
-
-                <p class="mt-4 text-md text-gray-500 font-sans">
-                    Desarrollo aplicaciones completas desde cero, trabajando tanto el backend como el frontend con tecnologías modernas.
+                
+                <p class="mt-2 text-md text-gray-500 font-sanst text-left">
+                    Me dedico a desarrollar aplicaciones completas desde cero, trabajando tanto el backend como el frontend con tecnologías modernas.
                 </p>
-
-                <p class="mt-4 text-md text-gray-500 font-sans">
-                    Me enfoco en escribir código limpio, estructurar correctamente la lógica del sistema y crear interfaces claras que faciliten la experiencia del usuario. Disfruto resolver problemas y optimizar procesos en cada proyecto.
+                
+                <p class="mt-2 text-md text-gray-500 font-sanst text-left">
+                    Tengo experiencia construyendo APIs, integrando interfaces dinámicas y gestionando bases de datos, siempre buscando soluciones claras y bien estructuradas.
                 </p>
-
+                
+                <p class="mt-2 text-md text-gray-500 font-sanst text-left">
+                    Disfruto optimizar procesos, resolver problemas y crear herramientas que aporten valor en cada proyecto.
+                </p>
+                
                 <!-- TECNOLOGÍAS -->
                 <div class="mt-4">
                     <p class="text-md text-gray-500 font-sans">
                         Tecnologías que utilizo:
                     </p>
-
+                    
                     <div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-6 gap-8 items-center mt-4">
-
+                        
                         <!-- HTML -->
-                        <div class="group flex flex-col items-center gap-2 hover:scale-110 transition duration-300">
+                        <div class="flex flex-col items-center gap-2 hover:scale-110 transition duration-300">
                             <img src="https://cdn.simpleicons.org/html5" alt="HTML5" class="w-10 h-10">
                             <span class="text-sm text-gray-500">HTML</span>
                         </div>
-
+                        
                         <!-- CSS -->
-                        <div class="group flex flex-col items-center gap-2 hover:scale-110 transition duration-300">
-                            <img src="https://cdn.simpleicons.org/css" alt="HTML5" class="w-10 h-10">
+                        <div class="flex flex-col items-center gap-2 hover:scale-110 transition duration-300">
+                            <img src="https://cdn.simpleicons.org/css" alt="CSS" class="w-10 h-10">
                             <span class="text-sm text-gray-500">CSS</span>
                         </div>
-
+                        
                         <!-- SASS -->
-                        <div class="group flex flex-col items-center gap-2 hover:scale-110 transition duration-300">
-                            <img src="https://cdn.simpleicons.org/sass" alt="HTML5" class="w-10 h-10">
+                        <div class="flex flex-col items-center gap-2 hover:scale-110 transition duration-300">
+                            <img src="https://cdn.simpleicons.org/sass" alt="SASS" class="w-10 h-10">
                             <span class="text-sm text-gray-500">SASS</span>
                         </div>
-
+                        
                         <!-- Bootstrap -->
-                        <div class="group flex flex-col items-center gap-2 hover:scale-110 transition duration-300">
-                            <img src="https://cdn.simpleicons.org/bootstrap" alt="HTML5" class="w-10 h-10">
+                        <div class="flex flex-col items-center gap-2 hover:scale-110 transition duration-300">
+                            <img src="https://cdn.simpleicons.org/bootstrap" alt="Bootstrap" class="w-10 h-10">
                             <span class="text-sm text-gray-500">Bootstrap</span>
                         </div>
-
+                        
                         <!-- Tailwind -->
                         <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/tailwindcss" class="w-10 h-10">
+                            <img src="https://cdn.simpleicons.org/tailwindcss" alt="Tailwind" class="w-10 h-10">
                             <span class="text-sm text-gray-500">Tailwind</span>
                         </div>
-
+                        
                         <!-- PHP -->
                         <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/php" class="w-10 h-10">
+                            <img src="https://cdn.simpleicons.org/php" alt="PHP" class="w-10 h-10">
                             <span class="text-sm text-gray-500">PHP</span>
                         </div>
-
+                        
                         <!-- Laravel -->
                         <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/laravel" class="w-10 h-10">
+                            <img src="https://cdn.simpleicons.org/laravel" alt="Laravel" class="w-10 h-10">
                             <span class="text-sm text-gray-500">Laravel</span>
                         </div>
-
+                        
                         <!-- Laravel -->
                         <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
                             <img src="https://cdn.simpleicons.org/livewire" class="w-10 h-10" alt="Livewire">
                             <span class="text-sm text-gray-500">Livewire</span>
                         </div>
-
+                        
                         <!-- JavaScript -->
                         <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/javascript" class="w-10 h-10">
+                            <img src="https://cdn.simpleicons.org/javascript" alt="JavaScript" class="w-10 h-10">
                             <span class="text-sm text-gray-500">JavaScript</span>
                         </div>
-
+                        
                         <!-- Axios -->
                         <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/axios" class="w-10 h-10">
+                            <img src="https://cdn.simpleicons.org/axios" alt="Axios" class="w-10 h-10">
                             <span class="text-sm text-gray-500">Axios</span>
                         </div>
-
+                        
                         <!-- Vite -->
                         <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/vite" class="w-10 h-10">
+                            <img src="https://cdn.simpleicons.org/vite" alt="Vite" class="w-10 h-10">
                             <span class="text-sm text-gray-500">Vite</span>
                         </div>
-
+                        
                         <!-- GitHub -->
                         <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/json" class="w-10 h-10">
+                            <img src="https://cdn.simpleicons.org/json" alt="REST API" class="w-10 h-10">
                             <span class="text-sm text-gray-500">REST API</span>
                         </div>
-
+                        
                         <!-- Postman -->
                         <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/postman" class="w-10 h-10">
+                            <img src="https://cdn.simpleicons.org/postman" alt="Postman" class="w-10 h-10">
                             <span class="text-sm text-gray-500">Postman</span>
                         </div>
-
+                        
                         <!-- GitHub -->
                         <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/github" class="w-10 h-10">
+                            <img src="https://cdn.simpleicons.org/github" alt="GitHub" class="w-10 h-10">
                             <span class="text-sm text-gray-500">GitHub</span>
                         </div>
-
+                        
                         <!-- MySQL -->
                         <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/mysql" class="w-10 h-10">
+                            <img src="https://cdn.simpleicons.org/mysql" alt="MySQL" class="w-10 h-10">
                             <span class="text-sm text-gray-500">MySQL</span>
                         </div>
-
+                        
                     </div>
                 </div>
-
+                
                 <!-- STATS -->
-                <div class="flex justify-center gap-10 mt-12">
+                <div class="flex justify-center gap-10 mt-8">
                     <div>
                         <p class="text-3xl font-bold text-lime-500 text-center">+2</p>
                         <p class="text-sm text-gray-500 text-center">Años de experiencia</p>
                     </div>
-
+                    
                     <div>
                         <p class="text-3xl font-bold text-orange-500 text-center">+10</p>
                         <p class="text-sm text-gray-500 text-center">Proyectos</p>
                     </div>
                 </div>
-
+                
             </div>
-
+            
         </div>
     </section>
     
-    <section id="projects" class="min-h-screen scroll-mt-16 mt-20 md:mt-0">
-        <p>Proyectos</p>
-    </section>
+    <section id="projects" class="scroll-mt-20 md:scroll-mt-16 lg:scroll-mt-0">
+        <div class="min-h-screen flex items-center max-w-5xl mx-auto px-5 mt-20 md:mt-0">
+            
+            <div class="w-full">
+                
+                <h2 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-lime-500 to-orange-500 bg-clip-text text-transparent">
+                    Proyectos
+                </h2>
+                
+                <div class="w-20 h-1 bg-gradient-to-r from-lime-500 to-orange-500 mt-4 rounded"></div>
+                
+                <p class="mt-8 text-md text-gray-500 font-sans">
+                    Algunos de los proyectos en los que he trabajado:
+                </p>
+                
+                <div class="grid grid-cols-1 xs:grid-cols-2 items-center mt-4">
+                    
+
+
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="min-h-screen scroll-mt-16">
+            <p>Contacto</p>
+        </section>
+        
+        <footer class="mt-4 bg-lime-800 p-6">
+            <p class="font-sans text-base font-semibold text-white text-center">
+                © {{ date('Y') }} Juan Manuel Martínez García. Todos los derechos reservados.
+            </p>
+        </footer>
+    </body>
+    </html>
     
-    <section id="contact" class="min-h-screen scroll-mt-16">
-        <p>Contacto</p>
-    </section>
-    
-    <footer class="mt-4 bg-lime-800 p-6">
-        <p class="font-sans text-base font-semibold text-white text-center">
-            © {{ date('Y') }} Juan Manuel Martínez García. Todos los derechos reservados.
-        </p>
-    </footer>
-</body>
-</html>
