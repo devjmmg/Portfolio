@@ -93,97 +93,14 @@
                     </p>
                     
                     <div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-6 gap-8 items-center mt-4">
-                        
-                        <!-- HTML -->
-                        <div class="flex flex-col items-center gap-2 hover:scale-110 transition duration-300">
-                            <img src="https://cdn.simpleicons.org/html5" alt="HTML5" class="w-10 h-10">
-                            <span class="text-sm text-gray-500">HTML</span>
-                        </div>
-                        
-                        <!-- CSS -->
-                        <div class="flex flex-col items-center gap-2 hover:scale-110 transition duration-300">
-                            <img src="https://cdn.simpleicons.org/css" alt="CSS" class="w-10 h-10">
-                            <span class="text-sm text-gray-500">CSS</span>
-                        </div>
-                        
-                        <!-- SASS -->
-                        <div class="flex flex-col items-center gap-2 hover:scale-110 transition duration-300">
-                            <img src="https://cdn.simpleicons.org/sass" alt="SASS" class="w-10 h-10">
-                            <span class="text-sm text-gray-500">SASS</span>
-                        </div>
-                        
-                        <!-- Bootstrap -->
-                        <div class="flex flex-col items-center gap-2 hover:scale-110 transition duration-300">
-                            <img src="https://cdn.simpleicons.org/bootstrap" alt="Bootstrap" class="w-10 h-10">
-                            <span class="text-sm text-gray-500">Bootstrap</span>
-                        </div>
-                        
-                        <!-- Tailwind -->
-                        <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/tailwindcss" alt="Tailwind" class="w-10 h-10">
-                            <span class="text-sm text-gray-500">Tailwind</span>
-                        </div>
-                        
-                        <!-- PHP -->
-                        <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/php" alt="PHP" class="w-10 h-10">
-                            <span class="text-sm text-gray-500">PHP</span>
-                        </div>
-                        
-                        <!-- Laravel -->
-                        <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/laravel" alt="Laravel" class="w-10 h-10">
-                            <span class="text-sm text-gray-500">Laravel</span>
-                        </div>
-                        
-                        <!-- Laravel -->
-                        <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/livewire" class="w-10 h-10" alt="Livewire">
-                            <span class="text-sm text-gray-500">Livewire</span>
-                        </div>
-                        
-                        <!-- JavaScript -->
-                        <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/javascript" alt="JavaScript" class="w-10 h-10">
-                            <span class="text-sm text-gray-500">JavaScript</span>
-                        </div>
-                        
-                        <!-- Axios -->
-                        <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/axios" alt="Axios" class="w-10 h-10">
-                            <span class="text-sm text-gray-500">Axios</span>
-                        </div>
-                        
-                        <!-- Vite -->
-                        <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/vite" alt="Vite" class="w-10 h-10">
-                            <span class="text-sm text-gray-500">Vite</span>
-                        </div>
-                        
-                        <!-- GitHub -->
-                        <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/json" alt="REST API" class="w-10 h-10">
-                            <span class="text-sm text-gray-500">REST API</span>
-                        </div>
-                        
-                        <!-- Postman -->
-                        <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/postman" alt="Postman" class="w-10 h-10">
-                            <span class="text-sm text-gray-500">Postman</span>
-                        </div>
-                        
-                        <!-- GitHub -->
-                        <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/github" alt="GitHub" class="w-10 h-10">
-                            <span class="text-sm text-gray-500">GitHub</span>
-                        </div>
-                        
-                        <!-- MySQL -->
-                        <div class="flex flex-col items-center gap-2 hover:scale-110 transition ease-linear duration-300">
-                            <img src="https://cdn.simpleicons.org/mysql" alt="MySQL" class="w-10 h-10">
-                            <span class="text-sm text-gray-500">MySQL</span>
-                        </div>
-                        
+                        @foreach ($technologies as $t)
+                            <!-- HTML -->
+                            <div class="flex flex-col items-center gap-2 hover:scale-110 transition duration-300">
+                                <img src="{{ asset('storage/icons/' . $t->icon)}}" alt="{{$t->name}}" class="w-10 h-10">
+                                <span class="text-sm text-gray-500">{{$t->name}}</span>
+                            </div>
+                        @endforeach
+
                     </div>
                 </div>
                 
