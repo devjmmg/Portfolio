@@ -31,6 +31,8 @@
         <div class="mt-4 md:w-1/2 flex items-center justify-center">
             @if ($icon)
                 <img src="{{ $icon->temporaryUrl() }}" class="w-20 h-20 md:w-10 md:h-10" alt="{{ $name }}">
+            @else
+                <img src="{{ asset('storage/icons/' . $technology->icon) }}" class="w-20 h-20 md:w-10 md:h-10 p-1" alt="{{ $technology->name }}" >
             @endif
         </div>
 

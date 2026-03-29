@@ -6,6 +6,19 @@
     </x-slot>
 
     <div class="max-w-7xl mx-auto p-4">
+
+        @if (session('success'))
+            <div 
+                x-data="{ show: true }"
+                x-init="setTimeout(() => show = false, 3000)"
+                x-show="show"
+                x-transition
+                class="bg-green-100 text-green-600 p-4 rounded mb-4"
+            >
+                {{ session('success') }}
+            </div>
+        @endif
+
         <div class="flex justify-end">
             <a href="{{route('technologies.create')}}" class="block bg-lime-500 hover:bg-lime-600 transition-colors duration-300 ease-linear p-2 w-10 h-10 rounded text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -17,6 +30,10 @@
             @foreach ($technologies as $technology)
                 <livewire:technologies.index :technology="$technology" />
             @endforeach
+        </div>
+
+        <div class="mt-4">
+            {{$technologies->links()}}
         </div>
         
     </div>
