@@ -19,11 +19,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/technologies', [TechnologyController::class, 'index'])->name('technologies.index');
     Route::get('/technologies/create', [TechnologyController::class, 'create'])->name('technologies.create');
-    Route::post('/technologies', [TechnologyController::class, 'store'])->name('technologies.store');
-    Route::get('/technologies/{technology}', [TechnologyController::class, 'show'])->name('technologies.show');
     Route::get('/technologies/{technology}/edit', [TechnologyController::class, 'edit'])->name('technologies.edit');
-    Route::put('/technologies/{technology}', [TechnologyController::class, 'update'])->name('technologies.update');
-    Route::delete('/technologies/{technology}', [TechnologyController::class, 'destroy'])->name('technologies.destroy');
 
     Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
     Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
