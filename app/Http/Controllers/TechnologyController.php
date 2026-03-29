@@ -9,10 +9,7 @@ class TechnologyController extends Controller
 {
     public function index()
     {
-        $technologies = Technology::orderBy('name', 'ASC')->paginate(10);
-        return view('technologies.index', [
-            'technologies' => $technologies
-        ]);
+        return view('technologies.index');
     }
 
     public function create()

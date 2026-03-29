@@ -27,13 +27,7 @@
             </a>
         </div>
         <div class="mt-4">
-            @foreach ($technologies as $technology)
-                <livewire:technologies.index :technology="$technology" />
-            @endforeach
-        </div>
-
-        <div class="mt-4">
-            {{$technologies->links()}}
+            <livewire:technologies.index />
         </div>
         
     </div>
