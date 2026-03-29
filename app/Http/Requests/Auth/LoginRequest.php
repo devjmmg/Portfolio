@@ -33,6 +33,15 @@ class LoginRequest extends FormRequest
         ];
     }
 
+    public function messages(): array
+    {
+        return [
+            'email.required' => 'El correo electrónico es requerido',
+            'email.email' => 'El correo electrónico no es válido',
+            'password.required' => 'La contraseña es requerida',
+        ];
+    }
+
     /**
      * Attempt to authenticate the request's credentials.
      *
