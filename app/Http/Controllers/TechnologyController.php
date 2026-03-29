@@ -20,4 +20,11 @@ class TechnologyController extends Controller
         return view('technologies.create');
     }
 
+    public function edit(Technology $technology)
+    {
+        return view('technologies.edit', [
+            'technology' => $technology
+        ]);
+    }
+
 }
