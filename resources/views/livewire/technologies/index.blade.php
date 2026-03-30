@@ -1,6 +1,6 @@
 <div>
     @forelse ($technologies as $technology)
-        <div class="bg-white shadow-sm rounded mt-2 p-4 flex flex-col items-center justify-center sm:flex-row gap-5 sm:justify-between sm:gap-0">
+        <div wire:key='tech{{ $technology->id }}' class="bg-white shadow-sm rounded mt-2 p-4 flex flex-col items-center justify-center sm:flex-row gap-5 sm:justify-between sm:gap-0">
             <!-- IZQUIERDA -->
             <div class="flex items-center gap-3">
 
@@ -46,7 +46,7 @@
     @endforelse
 
     <div class="mt-4">
-        {{$technologies->links()}}
+        {{ $technologies->links() }}
     </div>
 </div>
 

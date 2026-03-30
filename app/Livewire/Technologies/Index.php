@@ -6,9 +6,13 @@ use App\Models\Technology;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\On;
 use Livewire\Component;
+use Livewire\WithoutUrlPagination;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
+
+    use WithPagination, WithoutUrlPagination;
 
     public $technology;
 
