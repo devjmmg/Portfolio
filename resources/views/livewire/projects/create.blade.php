@@ -54,6 +54,28 @@
         </div>
 
     </div>
+
+    <div class="mt-4">
+        <x-input-label for="image" :value="__('Tecnologías utilizadas')" />
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-2 mt-4">
+            @foreach($listTechnologies as $lt)
+                <label class="flex items-center justify-between space-x-2 p-2 border rounded hover:bg-gray-50 cursor-pointer">
+                    <div class="flex items-center gap-2">
+                        <input 
+                            type="checkbox" 
+                            wire:model="technologies" 
+                            value="{{ $lt->id }}" 
+                            class="h-4 w-4 text-lime-600 border-gray-300 rounded"
+                        />
+                        <span class="text-gray-700">{{ $lt->name }}</span>
+                    </div>
+                    <img src="{{asset('storage/icons/' . $lt->icon)}}" class="w-8 h-8" alt="{{$lt->name}}">
+                </label>
+            @endforeach
+        </div>
+        <x-input-error :messages="$errors->get('technologies')" class="mt-2" />
+    </div>
     
     <div class="flex items-center justify-end mt-4">
         <x-primary-button>

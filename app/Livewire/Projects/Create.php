@@ -3,6 +3,8 @@
 namespace App\Livewire\Projects;
 
 use App\Models\Project;
+use App\Models\ProjectTechnology;
+use App\Models\Technology;
 use Illuminate\Support\Str;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -11,6 +13,7 @@ class Create extends Component
 {
 
     use WithFileUploads;
+    public $technologies = [];
     public $name;
     public $slug;
     public $description;
@@ -28,6 +31,7 @@ class Create extends Component
         $this->demo_url = '';
         $this->github_url = '';
         $this->image = '';
+        $this->technologies = [];
     }
 
     public function updatedName($value)
@@ -42,6 +46,7 @@ class Create extends Component
         'demo_url' => 'nullable|url|max:255',
         'github_url' => 'nullable|url|max:255',
         'image' => 'required|file|mimes:jpg,jpeg,png,svg|max:2048',
+        'technologies' => 'required|array|min:1',
     ];
 
     protected $messages = [
@@ -66,7 +71,10 @@ class Create extends Component
         'image.required' => 'La imagen es requerida',
         'image.file' => 'El archivo debe ser válido',
         'image.mimes' => 'La imagen debe ser un archivo jpg, jpeg, png o SVG',
-        'image.max' => 'La imagen no debe pesar más de 2MB'
+        'image.max' => 'La imagen no debe pesar más de 2MB',
+
+        'technologies.required' => 'Debes seleccionar al menos una tecnología',
+        'technologies.min' => 'Debes seleccionar al menos una tecnología',
     ];
 
     public function store()
@@ -76,10 +84,10 @@ class Create extends Component
         $image = $this->image->store('projects', 'public');
         $imageName = basename($image);
 
-        $order = Project::max('id') ?? 0;
+        $order = Project::max('order') ?? 0;
         $order++;
 
-        Project::create([
+        $project = Project::create([
             'name' => $data['name'],
             'slug' => $data['slug'],
             'description' => $data['description'],
@@ -88,6 +96,18 @@ class Create extends Component
             'image' => $imageName,
             'order' => $order
         ]);
+        $id = $project->id;
+
+        $proyectTechnology = [];
+        foreach( $data['technologies'] as $technology_id ) {
+            $proyectTechnology[] = [
+                'project_id' => $id,
+                'technology_id' => $technology_id,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ];
+        }
+        ProjectTechnology::insert($proyectTechnology);
 
         session()->flash('success', 'Proyecto creado correctamente');
         return redirect()->route('projects.index');
@@ -95,6 +115,9 @@ class Create extends Component
 
     public function render()
     {
-        return view('livewire.projects.create');
+        $listTechnologies = Technology::orderBy('name', 'ASC')->get();
+        return view('livewire.projects.create', [
+            'listTechnologies' => $listTechnologies
+        ]);
     }
 }
