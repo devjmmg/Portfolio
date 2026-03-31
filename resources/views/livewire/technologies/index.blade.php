@@ -35,7 +35,7 @@
             <div class="flex justify-between gap-2">
 
                 <!-- TOGGLE ACTIVE -->
-                <button type="button" wire:click="toggleActive({{$technology->id}})" class="px-2 py-1 text-xs focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded {{ $technology->active ? 'bg-red-100 text-red-500 hover:text-red-600' : 'bg-green-100 text-green-600 hover:text-green-600' }} transition-colors duration-300 ease-linear">
+                <button type="button" wire:click="toggleActive({{$technology->id}})" class="px-2 py-1 text-xs focus:outline-none focus:ring-2 focus:ring-offset-2 rounded {{ $technology->active ? 'bg-red-100 text-red-500 focus:ring-red-500 hover:text-red-600' : 'bg-green-100 text-green-600 focus:ring-green-500 hover:text-green-600' }} transition-colors duration-300 ease-linear">
                     {{ $technology->active ? 'Desactivar' : 'Activar' }}
                 </button>
 

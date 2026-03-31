@@ -3,12 +3,23 @@
 namespace App\Livewire\Projects;
 
 use App\Models\Project;
+use App\Models\Technology;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
 class Index extends Component
 {
+
+    public function updateOrder(Project $project, $value)
+    {
+        if ( $project->order != $value ) {
+            $value = $value >= 1 ? $value : 1;
+            $project->update([
+                'order' => $value
+            ]);
+        }
+    }
 
     public function toggleActive($id)
     {
@@ -28,9 +39,12 @@ class Index extends Component
 
     public function render()
     {
+
         $projects = Project::orderBy('name', 'ASC')->paginate(10);
+        $github = Technology::where('slug', 'github')->first();
         return view('livewire.projects.index', [
-            'projects' => $projects
+            'projects' => $projects,
+            'github' => $github
         ]);
     }
 }
