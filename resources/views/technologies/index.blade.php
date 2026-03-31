@@ -20,7 +20,7 @@
         @endif
 
         <div class="flex justify-end">
-            <a href="{{route('technologies.create')}}" class="block bg-lime-500 hover:bg-lime-600 transition-colors duration-300 ease-linear p-2 w-10 h-10 rounded text-white">
+            <a href="{{route('technologies.create')}}" class="block bg-lime-500 hover:bg-lime-600 transition-colors duration-300 ease-linear p-2 w-10 h-10 text-white focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 rounded">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                 </svg>

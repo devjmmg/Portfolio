@@ -84,8 +84,7 @@ class Create extends Component
         $image = $this->image->store('projects', 'public');
         $imageName = basename($image);
 
-        $order = Project::max('order') ?? 0;
-        $order++;
+        $order = (Project::max('order') ?? 0) + 1;
 
         $project = Project::create([
             'name' => $data['name'],

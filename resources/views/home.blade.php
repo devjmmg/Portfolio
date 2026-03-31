@@ -54,7 +54,7 @@
         </div>
         
         <div class="w-11/12 mx-auto md:w-3/5 lg:w-1/2 bg-lime-500 p-10 pb-0 md:p-14 md:pb-0.5 rounded-[90%_90%_75%_55%/47%_60%_50%_50%] flex justify-center items-center">
-            <img class="block rounded-[0%_0%_43%_26%/0%_0%_17%_15%] sm:rounded-[0%_0%_43%_26%/0%_0%_20%_15%] md:rounded-[0%_0%_43%_26%/0%_0%_13%_15%] lg:rounded-[0%_0%_43%_26%/0%_0%_15%_15%]" src="{{asset('storage/me/me.png')}}" alt="Juan Manuel">
+            <img loading="lazy" class="block rounded-[0%_0%_43%_26%/0%_0%_17%_15%] sm:rounded-[0%_0%_43%_26%/0%_0%_20%_15%] md:rounded-[0%_0%_43%_26%/0%_0%_13%_15%] lg:rounded-[0%_0%_43%_26%/0%_0%_15%_15%]" src="{{asset('storage/me/me.png')}}" alt="Juan Manuel">
         </div>
         
     </main>
@@ -96,7 +96,7 @@
                         @foreach ($technologies as $t)
                             <!-- HTML -->
                             <div class="flex flex-col items-center gap-2 hover:scale-110 transition duration-300">
-                                <img src="{{ asset('storage/icons/' . $t->icon)}}" alt="{{$t->name}}" class="w-10 h-10">
+                                <img loading="lazy" src="{{ asset('storage/icons/' . $t->icon)}}" alt="{{$t->name}}" class="w-10 h-10">
                                 <span class="text-sm text-gray-500">{{$t->name}}</span>
                             </div>
                         @endforeach
