@@ -32,7 +32,7 @@
             @if ($icon)
                 <img loading="lazy" src="{{ $icon->temporaryUrl() }}" class="w-20 h-20 md:w-10 md:h-10" alt="{{ $name }}">
             @else
-                <img loading="lazy" src="{{ asset('storage/icons/' . $technology->icon) }}" class="w-20 h-20 md:w-10 md:h-10 p-1" alt="{{ $technology->name }}" >
+                <img loading="lazy" src="{{ asset('storage/icons/' . $iconCurrent) }}" class="w-20 h-20 md:w-10 md:h-10 p-1" alt="{{ $name }}" >
             @endif
         </div>
 

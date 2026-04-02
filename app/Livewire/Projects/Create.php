@@ -13,24 +13,22 @@ class Create extends Component
 {
 
     use WithFileUploads;
-    public $technologies = [];
     public $name;
     public $slug;
     public $description;
     public $image;
     public $demo_url;
     public $github_url;
-    public $active;
-    public $order;
+    public $technologies = [];
 
     public function mount()
     {
         $this->name = '';
         $this->slug = '';
         $this->description = '';
+        $this->image = '';
         $this->demo_url = '';
         $this->github_url = '';
-        $this->image = '';
         $this->technologies = [];
     }
 
@@ -70,7 +68,7 @@ class Create extends Component
 
         'image.required' => 'La imagen es requerida',
         'image.file' => 'El archivo debe ser válido',
-        'image.mimes' => 'La imagen debe ser un archivo jpg, jpeg, png o SVG',
+        'image.mimes' => 'La imagen debe ser un archivo jpg, jpeg, png o svg',
         'image.max' => 'La imagen no debe pesar más de 2MB',
 
         'technologies.required' => 'Debes seleccionar al menos una tecnología',
@@ -95,18 +93,20 @@ class Create extends Component
             'image' => $imageName,
             'order' => $order
         ]);
-        $id = $project->id;
 
-        $proyectTechnology = [];
-        foreach( $data['technologies'] as $technology_id ) {
-            $proyectTechnology[] = [
-                'project_id' => $id,
-                'technology_id' => $technology_id,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ];
-        }
-        ProjectTechnology::insert($proyectTechnology);
+        // $id = $project->id;
+        // $proyectTechnology = [];
+        // foreach( $data['technologies'] as $technology_id ) {
+        //     $proyectTechnology[] = [
+        //         'project_id' => $id,
+        //         'technology_id' => $technology_id,
+        //         'created_at' => now(),
+        //         'updated_at' => now(),
+        //     ];
+        // }
+        // ProjectTechnology::insert($proyectTechnology);
+        
+        $project->technologies()->attach($data['technologies']);
 
         session()->flash('success', 'Proyecto creado correctamente');
         return redirect()->route('projects.index');

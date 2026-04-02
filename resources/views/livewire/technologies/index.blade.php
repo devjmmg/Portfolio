@@ -12,7 +12,7 @@
                 >
 
                 <div class="flex flex-col">
-                    <p class="text-md font-medium text-gray-800">
+                    <p class="text-md font-medium text-gray-800 text-nowrap">
                         {{ $technology->name }}
                     </p>
 

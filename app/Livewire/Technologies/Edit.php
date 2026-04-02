@@ -21,9 +21,9 @@ class Edit extends Component
     public function mount(Technology $technology)
     {
         $this->technology = $technology;
-        $this->name = $this->technology->name;
-        $this->slug = $this->technology->slug;
-        $this->iconCurrent = $this->technology->icon;
+        $this->name = $technology->name;
+        $this->slug = $technology->slug;
+        $this->iconCurrent = $technology->icon;
     }
 
     public function updatedName($value)
@@ -60,8 +60,7 @@ class Edit extends Component
             }
             $icon = $this->icon->store('icons', 'public');
             $data['icon'] = basename($icon);
-        }
-        if (!$this->icon) {
+        } else {
             unset($data['icon']);
         }
 

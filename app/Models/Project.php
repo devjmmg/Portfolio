@@ -16,4 +16,9 @@ class Project extends Model
         'active',
         'order',
     ];
+
+    public function technologies()
+    {
+        return $this->belongsToMany(Technology::class, 'project_technologies')->withTimestamps();
+    }
 }
