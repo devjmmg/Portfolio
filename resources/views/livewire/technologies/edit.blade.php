@@ -3,14 +3,14 @@
     <!-- Name -->
     <div>
         <x-input-label for="name" :value="__('Nombre de la tecnología')" />
-        <x-text-input id="name" class="block mt-2 w-full" type="text" wire:model.live="name" autofocus autocomplete="name" />
+        <x-text-input id="name" name="name" class="block mt-2 w-full" type="text" wire:model.live="name" autofocus autocomplete="name" />
         <x-input-error :messages="$errors->get('name')" class="mt-2" />
     </div>
     
     <!-- Slug -->
     <div class="mt-4">
         <x-input-label for="slug" :value="__('Slug')" />
-        <x-text-input id="slug" class="block mt-2 w-full bg-gray-100 text-black" type="text" wire:model.live="slug" value="{{$slug}}" disabled />
+        <x-text-input id="slug" name="slug" class="block mt-2 w-full bg-gray-100 text-black" type="text" wire:model.live="slug" value="{{$slug}}" disabled />
         <x-input-error :messages="$errors->get('slug')" class="mt-2" />
     </div>
     
@@ -19,7 +19,8 @@
         <div class="mt-4 md:w-1/2">
             <x-input-label for="icon" :value="__('Icono')" />
             <x-text-input 
-                id="icon" 
+                id="icon"
+                name="name"
                 class="block mt-2 w-full rounded-none" 
                 type="file" 
                 wire:model="icon" 

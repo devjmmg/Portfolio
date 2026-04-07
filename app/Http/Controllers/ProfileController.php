@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class ProfileController extends Controller
@@ -26,7 +27,25 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+
+        $user = $request->user();
+        $data = $request->validated();
+        $user->fill($data);
+
+        if ($request->hasFile('cv')) {
+            $fileName = 'JuanManuelMartinezGarcia_CV.pdf';
+            $path = $request->file('cv')->storeAs('cv', $fileName, 'public');
+            $user->cv = basename($path);
+        }
+
+        if ($request->hasFile('image')) {
+            if ($user->image && Storage::disk('public')->exists('me/' . $user->image)) {
+                Storage::disk('public')->delete('me/' . $user->image);
+            }
+            $fileName = 'me.' . $request->file('image')->extension();
+            $path = $request->file('image')->storeAs('me', $fileName, 'public');
+            $user->image = basename($path);
+        }
 
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;

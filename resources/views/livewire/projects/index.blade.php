@@ -79,11 +79,15 @@
                     {{ $project->active ? 'Desactivar' : 'Activar' }}
                 </button>
 
-                <a href="{{$project->github_url}}"
-                    target="_blank" rel="noopener noreferrer"
-                    class="w-8 h-8bg-gray-100 text-black hover:bg-gray-200 p-1 flex items-center justify-center transition-colors duration-300 ease-linear focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 rounded">
-                    <img src="{{asset('storage/icons/' . $github->icon)}}" alt="">
-                </a>
+                @isset($github)
+                    @if ($project->github_url)
+                        <a href="{{$project->github_url}}"
+                            target="_blank" rel="noopener noreferrer"
+                            class="w-8 h-8bg-gray-100 text-black hover:bg-gray-200 p-1 flex items-center justify-center transition-colors duration-300 ease-linear focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 rounded">
+                            <img src="{{asset('storage/icons/' . $github->icon)}}" alt="{{$github->name}}">
+                        </a>
+                    @endif
+                @endisset
 
                 <a href="{{$project->demo_url}}"
                     target="_blank" rel="noopener noreferrer"
@@ -93,7 +97,7 @@
                     </svg>
                 </a>
 
-                <x-text-input id="order-{{$project->id}}" onchange="updateValue(event)" title="Orden del proyecto" wire:change.debounce.500ms="updateOrder({{ $project->id }}, $event.target.value)" type="number" min="1" class="w-14 mt-0 h-8" value="{{$project->order}}"/>
+                <x-text-input onchange="updateValue(event)" title="Orden del proyecto" wire:change.debounce.500ms="updateOrder({{ $project->id }}, $event.target.value)" type="number" min="1" class="!w-16 !mt-0 !h-8" value="{{$project->order}}"/>
 
                 <a href="{{ route('projects.edit', $project) }}"
                     class="w-8 h-8 bg-amber-100 text-amber-500 hover:text-amber-600 p-1 flex items-center justify-center transition-colors duration-300 ease-linear focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 rounded">

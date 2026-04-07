@@ -34,28 +34,36 @@
                 Creando aplicaciones web modernas
             </p>
             <div class="flex flex-col xs:flex-row items-center justify-center gap-4 pt-8 text-center">
-                <a href="mailto:mg.jmanuel7@gmail.com" class="p-2 hover:bg-gray-300 transition-colors duration-300 ease-linear rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-                    </svg>
-                </a>
-                <a href="https://github.com/devjmmg" target="_blank" rel="noopener noreferrer" class="p-2 hover:bg-gray-300 transition-colors duration-300 ease-linear rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.016-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.304.76-1.604-2.665-.304-5.467-1.335-5.467-5.933 0-1.31.468-2.38 1.235-3.22-.123-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 0 1 3-.403c1.02.005 2.045.137 3 .403 2.29-1.552 3.296-1.23 3.296-1.23.654 1.653.242 2.873.12 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.807 5.625-5.48 5.921.43.37.815 1.096.815 2.21 0 1.595-.014 2.88-.014 3.27 0 .32.216.694.825.576C20.565 21.795 24 17.303 24 12c0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                </a>
-                <a href="{{asset('storage/cv/JuanManuelMartinezGarcia_CV.pdf')}}" download class="text-pretty text-neutral-900 border flex justify-center items-center gap-2 border-gray-300 hover:border-lime-500 font-semibold px-6 py-3 transition-colors duration-300 ease-linear focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 rounded">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-                    </svg>
-                    Descargar CV
-                </a>
+                @if ($user->email)
+                    <a href="mailto:{{$user->email}}" class="p-2 hover:bg-gray-300 transition-colors duration-300 ease-linear rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                        </svg>
+                    </a>
+                @endif
+                @isset($github)
+                    @if ($user->github_url)
+                        <a href="https://github.com/devjmmg" target="_blank" rel="noopener noreferrer" class="p-2 hover:bg-gray-300 transition-colors duration-300 ease-linear rounded-full">
+                            <img loading="lazy" class="w-8 h-8" src="{{asset('storage/icons/' . $github->icon)}}" alt="{{$github->name}}">
+                        </a>
+                    @endif
+                @endisset
+                @if ($user->cv)
+                    <a href="{{asset('storage/cv/' . $user->cv)}}" download class="text-pretty text-neutral-900 border flex justify-center items-center gap-2 border-gray-300 hover:border-lime-500 font-semibold px-6 py-3 transition-colors duration-300 ease-linear focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 rounded">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                        </svg>
+                        Descargar CV
+                    </a>
+                @endif
             </div>
         </div>
         
-        <div class="w-11/12 mx-auto md:w-3/5 lg:w-1/2 bg-lime-500 p-10 pb-0 md:p-14 md:pb-0.5 rounded-[90%_90%_75%_55%/47%_60%_50%_50%] flex justify-center items-center">
-            <img loading="lazy" class="block rounded-[0%_0%_43%_26%/0%_0%_17%_15%] sm:rounded-[0%_0%_43%_26%/0%_0%_20%_15%] md:rounded-[0%_0%_43%_26%/0%_0%_13%_15%] lg:rounded-[0%_0%_43%_26%/0%_0%_15%_15%]" src="{{asset('storage/me/me.png')}}" alt="Juan Manuel">
-        </div>
+        @if ($user->image)
+            <div class="w-11/12 mx-auto md:w-3/5 lg:w-1/2 bg-lime-500 p-10 pb-0 md:p-14 md:pb-0.5 rounded-[90%_90%_75%_55%/47%_60%_50%_50%] flex justify-center items-center">
+                <img loading="lazy" class="block rounded-[0%_0%_43%_26%/0%_0%_17%_15%] sm:rounded-[0%_0%_43%_26%/0%_0%_20%_15%] md:rounded-[0%_0%_43%_26%/0%_0%_13%_15%] lg:rounded-[0%_0%_43%_26%/0%_0%_15%_15%]" src="{{asset('storage/me/' . $user->image)}}" alt="{{$user->name}}">
+            </div>
+        @endif
         
     </main>
     

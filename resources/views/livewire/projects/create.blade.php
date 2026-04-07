@@ -4,32 +4,32 @@
 
         <div>
             <x-input-label for="name" :value="__('Nombre del proyecto')" />
-            <x-text-input id="name" type="text" wire:model.live="name" autofocus autocomplete="name" />
+            <x-text-input id="name" name="name" type="text" wire:model.live="name" autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
         
         <div>
             <x-input-label for="slug" :value="__('Slug')" />
-            <x-text-input id="slug" class="bg-gray-100" type="text" wire:model.live="slug" value="{{$slug}}" disabled />
+            <x-text-input id="slug" name="slug" class="bg-gray-100" type="text" wire:model.live="slug" value="{{$slug}}" disabled />
             <x-input-error :messages="$errors->get('slug')" class="mt-2" />
         </div>
     </div>
 
     <div class="mt-4">
         <x-input-label for="description" :value="__('Descripción del proyecto')" />
-        <textarea id="description" class="block mt-2 w-full text-sm border-gray-300 shadow-sm focus:border-lime-500 focus:outline-none focus:ring-lime-500 rounded h-36" wire:model="description"></textarea>
+        <textarea id="description" name="description" class="block mt-2 w-full text-sm border-gray-300 shadow-sm focus:border-lime-500 focus:outline-none focus:ring-lime-500 rounded h-36" wire:model="description"></textarea>
         <x-input-error :messages="$errors->get('description')" class="mt-2" />
     </div>
 
     <div class="mt-4">
         <x-input-label for="demo_url" :value="__('URL de la demo')" />
-        <x-text-input id="demo_url" type="text" wire:model="demo_url" autofocus autocomplete="demo_url" />
+        <x-text-input id="demo_url" name="demo_url" type="text" wire:model="demo_url" autofocus autocomplete="demo_url" />
         <x-input-error :messages="$errors->get('demo_url')" class="mt-2" />
     </div>
     
     <div class="mt-4">
         <x-input-label for="github_url" :value="__('URL de GitHub')" />
-        <x-text-input id="github_url" type="text" wire:model="github_url" />
+        <x-text-input id="github_url" name="github_url" type="text" wire:model="github_url" />
         <x-input-error :messages="$errors->get('github_url')" class="mt-2" />
     </div>
     
@@ -37,6 +37,7 @@
         <x-input-label for="image" :value="__('Imagen')" />
         <x-text-input 
             id="image"
+            name="image"
             class="block mt-2 w-full text-sm border-gray-300 shadow-sm focus:border-lime-500 focus:outline-none focus:ring-lime-500 rounded"
             type="file" 
             wire:model="image" 
