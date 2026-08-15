@@ -41,7 +41,7 @@ export default function Navbar() {
                     <button
                         type="button" 
                         aria-label="Cerrar menú" 
-                        className={`md:hidden text-white h-[60px] p-4`}
+                        className={`md:hidden text-white h-15 p-4`}
                         onClick={handleCloseMenu}
                     >
                         {
