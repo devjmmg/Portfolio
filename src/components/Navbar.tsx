@@ -21,6 +21,14 @@ export default function Navbar() {
         };
     }, []);
 
+    useEffect(() => {
+        document.body.style.overflow = open ? "hidden" : "";
+
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [open]);
+
     return (
         <>
 
@@ -36,7 +44,7 @@ export default function Navbar() {
 
             </button>
 
-            <div className={`fixed inset-0 bg-black/90 transition-[transform, opacity] duration-500 ${ open ? "translate-x-0 opacity-100" : " -translate-x-full opacity-0"  }`}>
+            <div className={`fixed inset-0 bg-black/90 z-20 transition-[transform, opacity] duration-500 ${ open ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"  }`}>
                 <div className="flex justify-end">
                     <button
                         type="button" 
