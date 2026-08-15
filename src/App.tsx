@@ -1,8 +1,14 @@
+import Header from "./components/Header"
+import Home from "./components/Home"
+
 function App() {
     
     return (
         <>
-            <h1>Portfolio</h1>
+            <Header />
+            <main id="home" className="max-w-7xl mx-auto p-4 md:p-0">
+                <Home />
+            </main>
         </>
     )
 }
