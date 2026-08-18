@@ -2,10 +2,10 @@ export default function Home() {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center min-h-[calc(100vh-60px)]">
             <div className="text-center order-2 md:order-1 space-y-7">
-                <p className="text-2xl font-medium text-gray-600">Hola, Soy</p>
+                <p className="text-2xl font-medium text-gray-500">Hola, Soy</p>
                 <h2 className="text-5xl font-bold bg-linear-to-r from-indigo-500 to-indigo-950 bg-clip-text text-transparent">Juan Manuel Martínez García</h2>
-                <p className="text-2xl font-semibold text-gray-600">Desarrollador Full Stack</p>
-                <p className="text-gray-700">Me apasiona programar y construir aplicaciones web modernas con código limpio y soluciones creativas. Me gusta transformar ideas en productos funcionales y escalables que marquen la diferencia.</p>
+                <p className="text-2xl font-semibold text-gray-500">Desarrollador Full Stack</p>
+                <p className="text-gray-500">Me apasiona programar y construir aplicaciones web modernas con código limpio y soluciones creativas. Me gusta transformar ideas en productos funcionales y escalables que marquen la diferencia.</p>
                 <div className="flex gap-4 justify-center">
                     <a 
                         href="tel:+522223511153"
@@ -76,15 +76,15 @@ export default function Home() {
             <div className="relative order-1 md:order-2">
 
                 {/* Gradiente inferior izquierdo */}
-                <div className="absolute bottom-0 left-0 w-60 h-60 md:w-72 md:h-72 lg:w-96 lg:h-96 rounded-full bg-indigo-500/30 blur-3xl"></div>
+                <div className="absolute bottom-0 left-0 w-40 h-40 md:w-72 md:h-72 lg:w-96 lg:h-96 rounded-full bg-indigo-500/30 blur-3xl"></div>
 
                 {/* Gradiente superior derecho */}
-                <div className="absolute top-0 right-0 w-60 h-60 md:w-72 md:h-72 lg:w-96 lg:h-96 rounded-full bg-indigo-950/30 blur-3xl"></div>
+                <div className="absolute top-0 right-0 w-40 h-40 md:w-72 md:h-72 lg:w-96 lg:h-96 rounded-full bg-indigo-950/30 blur-3xl"></div>
 
                 <img
                     src="/img/me.png"
                     alt="Juan Manuel Martínez García"
-                    className="relative w-md md:w-xl mx-auto h-auto block mask-b-from-20%"
+                    className="relative w-md md:w-xl mx-auto h-auto block mask-b-from-80% border-b border-white"
                 />
 
             </div>

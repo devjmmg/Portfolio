@@ -63,7 +63,7 @@ export default function Navbar() {
                 <nav className={`flex flex-col text-center`}>
                     <a onClick={handleCloseMenu} href="#home" className="text-white p-4 font-medium text-sm hover:bg-indigo-500 transition-colors ease-linear duration-300">Inicio</a>
                     <a onClick={handleCloseMenu} href="#about" className="text-white p-4 font-medium text-sm hover:bg-indigo-500 transition-colors ease-linear duration-300">Sobre mí</a>
-                    <a onClick={handleCloseMenu} href="#skills" className="text-white p-4 font-medium text-sm hover:bg-indigo-500 transition-colors ease-linear duration-300">Habilidades</a>
+                    <a onClick={handleCloseMenu} href="#skill" className="text-white p-4 font-medium text-sm hover:bg-indigo-500 transition-colors ease-linear duration-300">Habilidades</a>
                     <a onClick={handleCloseMenu} href="#projects" className="text-white p-4 font-medium text-sm hover:bg-indigo-500 transition-colors ease-linear duration-300">Proyectos</a>
                     <a onClick={handleCloseMenu} href="#experience" className="text-white p-4 font-medium text-sm hover:bg-indigo-500 transition-colors ease-linear duration-300">Experiencia</a>
                     <a onClick={handleCloseMenu} href="#contact" className="text-white p-4 font-medium text-sm hover:bg-indigo-500 transition-colors ease-linear duration-300">Contacto</a>
@@ -73,7 +73,7 @@ export default function Navbar() {
             <nav className="hidden md:flex justify-between gap-4">
                 <a onClick={handleCloseMenu} href="#home" className="text-gray-500 font-medium text-sm hover:text-indigo-500 transition-colors ease-linear duration-300">Inicio</a>
                 <a onClick={handleCloseMenu} href="#about" className="text-gray-500 font-medium text-sm hover:text-indigo-500 transition-colors ease-linear duration-300">Sobre mí</a>
-                <a onClick={handleCloseMenu} href="#skills" className="text-gray-500 font-medium text-sm hover:text-indigo-500 transition-colors ease-linear duration-300">Habilidades</a>
+                <a onClick={handleCloseMenu} href="#skill" className="text-gray-500 font-medium text-sm hover:text-indigo-500 transition-colors ease-linear duration-300">Habilidades</a>
                 <a onClick={handleCloseMenu} href="#projects" className="text-gray-500 font-medium text-sm hover:text-indigo-500 transition-colors ease-linear duration-300">Proyectos</a>
                 <a onClick={handleCloseMenu} href="#experience" className="text-gray-500 font-medium text-sm hover:text-indigo-500 transition-colors ease-linear duration-300">Experiencia</a>
                 <a onClick={handleCloseMenu} href="#contact" className="text-gray-500 font-medium text-sm hover:text-indigo-500 transition-colors ease-linear duration-300">Contacto</a>

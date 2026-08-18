@@ -13,7 +13,7 @@ export default function About() {
             </div>
             <div className="space-y-8 order-1 md:order-2">
                 <h2 className="text-5xl font-bold bg-linear-to-r from-indigo-500 to-indigo-950 bg-clip-text text-transparent text-center">Sobre mi</h2>
-                <p className="text-md text-gray-700 text-center md:text-left">
+                <p className="text-md text-gray-500 text-center md:text-left">
                     Mi nombre es Juan Manuel Martínez García. Me apasiona programar y convertir ideas en aplicaciones web funcionales, modernas y escalables. Disfruto enfrentar problemas, buscar soluciones creativas y escribir código limpio y mantenible. A lo largo de mi experiencia he trabajado con diferentes tecnologías como React, TypeScript, Laravel y Node.js, siempre buscando seguir aprendiendo y mejorar la forma en que construyo software.
                 </p>
                 <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
