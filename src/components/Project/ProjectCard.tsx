@@ -181,7 +181,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                                     hover:text-indigo-600
                                 "
                             >
-                                <img src="/public/img/icons/github.svg" alt="GitHub" className="size-5" />
+                                <img src="/img/icons/github.svg" alt="GitHub" className="size-5" />
 
                                 GitHub
                             </a>
