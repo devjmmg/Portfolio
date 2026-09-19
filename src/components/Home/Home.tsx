@@ -58,7 +58,7 @@ export default function Home() {
                     <a
                         href="#projects"
                         className="
-                            px-6 py-3
+                            px-6 py-3 link
                             rounded-md
                             border border-gray-300
                             text-gray-600

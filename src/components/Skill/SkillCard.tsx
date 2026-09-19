@@ -1,10 +1,10 @@
 import type { Skill } from "../../types";
 
-interface SkillProps {
+interface SkillCardProps {
     skill: Skill
 }
 
-export default function SkillCard(props: SkillProps) {
+export default function SkillCard(props: SkillCardProps) {
 
     const { skill } = props;
     const { title, icon, technologies  } = skill;

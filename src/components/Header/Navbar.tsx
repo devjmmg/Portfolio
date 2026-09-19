@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
+import useNavigation from "../../hooks/useNavigation";
 
 export default function Navbar() {
 
+    const { activeSection } = useNavigation();
     const [ open, setOpen ] = useState<boolean>(false);
 
     const handleCloseMenu = () => {
@@ -61,22 +63,20 @@ export default function Navbar() {
                     </button>
                 </div>
                 <nav className={`flex flex-col text-center`}>
-                    <a onClick={handleCloseMenu} href="#home" className="text-white p-4 font-medium text-sm hover:bg-indigo-500 transition-colors ease-linear duration-300">Inicio</a>
-                    <a onClick={handleCloseMenu} href="#about" className="text-white p-4 font-medium text-sm hover:bg-indigo-500 transition-colors ease-linear duration-300">Sobre mí</a>
-                    <a onClick={handleCloseMenu} href="#skill" className="text-white p-4 font-medium text-sm hover:bg-indigo-500 transition-colors ease-linear duration-300">Habilidades</a>
-                    <a onClick={handleCloseMenu} href="#projects" className="text-white p-4 font-medium text-sm hover:bg-indigo-500 transition-colors ease-linear duration-300">Proyectos</a>
-                    <a onClick={handleCloseMenu} href="#experience" className="text-white p-4 font-medium text-sm hover:bg-indigo-500 transition-colors ease-linear duration-300">Experiencia</a>
-                    <a onClick={handleCloseMenu} href="#contact" className="text-white p-4 font-medium text-sm hover:bg-indigo-500 transition-colors ease-linear duration-300">Contacto</a>
+                    <a onClick={handleCloseMenu} href="#home" className={`${activeSection === '#home' ? 'bg-indigo-500' : ''} text-white p-4 font-medium text-sm hover:bg-indigo-500 transition-colors ease-linear duration-300 link`}>Inicio</a>
+                    <a onClick={handleCloseMenu} href="#about" className={`${activeSection === '#about' ? 'bg-indigo-500' : ''} text-white p-4 font-medium text-sm hover:bg-indigo-500 transition-colors ease-linear duration-300 link`}>Sobre mí</a>
+                    <a onClick={handleCloseMenu} href="#skills" className={`${activeSection === '#skills' ? 'bg-indigo-500' : ''} text-white p-4 font-medium text-sm hover:bg-indigo-500 transition-colors ease-linear duration-300 link`}>Habilidades</a>
+                    <a onClick={handleCloseMenu} href="#projects" className={`${activeSection === '#projects' ? 'bg-indigo-500' : ''} text-white p-4 font-medium text-sm hover:bg-indigo-500 transition-colors ease-linear duration-300 link`}>Proyectos</a>
+                    <a onClick={handleCloseMenu} href="#contact" className={`${activeSection === '#contact' ? 'bg-indigo-500' : ''} text-white p-4 font-medium text-sm hover:bg-indigo-500 transition-colors ease-linear duration-300 link`}>Contacto</a>
                 </nav>
             </div>
             
             <nav className="hidden md:flex justify-between gap-4">
-                <a onClick={handleCloseMenu} href="#home" className="text-gray-500 font-medium text-sm hover:text-indigo-500 transition-colors ease-linear duration-300">Inicio</a>
-                <a onClick={handleCloseMenu} href="#about" className="text-gray-500 font-medium text-sm hover:text-indigo-500 transition-colors ease-linear duration-300">Sobre mí</a>
-                <a onClick={handleCloseMenu} href="#skill" className="text-gray-500 font-medium text-sm hover:text-indigo-500 transition-colors ease-linear duration-300">Habilidades</a>
-                <a onClick={handleCloseMenu} href="#projects" className="text-gray-500 font-medium text-sm hover:text-indigo-500 transition-colors ease-linear duration-300">Proyectos</a>
-                <a onClick={handleCloseMenu} href="#experience" className="text-gray-500 font-medium text-sm hover:text-indigo-500 transition-colors ease-linear duration-300">Experiencia</a>
-                <a onClick={handleCloseMenu} href="#contact" className="text-gray-500 font-medium text-sm hover:text-indigo-500 transition-colors ease-linear duration-300">Contacto</a>
+                <a onClick={handleCloseMenu} href="#home" className={`${activeSection === '#home' ? 'text-indigo-500' : 'text-gray-500' } font-medium text-sm hover:text-indigo-500 transition-colors ease-linear duration-300 link`}>Inicio</a>
+                <a onClick={handleCloseMenu} href="#about" className={`${activeSection === '#about' ? 'text-indigo-500' : 'text-gray-500' } font-medium text-sm hover:text-indigo-500 transition-colors ease-linear duration-300 link`}>Sobre mí</a>
+                <a onClick={handleCloseMenu} href="#skills" className={`${activeSection === '#skills' ? 'text-indigo-500' : 'text-gray-500' } font-medium text-sm hover:text-indigo-500 transition-colors ease-linear duration-300 link`}>Habilidades</a>
+                <a onClick={handleCloseMenu} href="#projects" className={`${activeSection === '#projects' ? 'text-indigo-500' : 'text-gray-500' } font-medium text-sm hover:text-indigo-500 transition-colors ease-linear duration-300 link`}>Proyectos</a>
+                <a onClick={handleCloseMenu} href="#contact" className={`${activeSection === '#contact' ? 'text-indigo-500' : 'text-gray-500' } font-medium text-sm hover:text-indigo-500 transition-colors ease-linear duration-300 link`}>Contacto</a>
             </nav>
         </>
     )
