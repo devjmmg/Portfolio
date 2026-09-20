@@ -146,13 +146,15 @@ export const projects: Project[] = [
     {
         id: 1,
         title: "Portfolio",
-        description: "Portafolio personal desarrollado con React, TypeScript y Tailwind CSS para presentar mis proyectos y experiencia en desarrollo web. Incluye una sección de proyectos con información sobre las tecnologías utilizadas, demostraciones y repositorios. Cuenta con un diseño responsive, componentes reutilizables y una interfaz enfocada en una navegación clara y moderna.",
+        description: "Portafolio personal desarrollado con React y TypeScript para presentar mis proyectos y habilidades en desarrollo web. Cuenta con una interfaz responsive construida con Tailwind CSS, componentes reutilizables, navegación entre secciones mediante un custom hook y un formulario de contacto integrado con EmailJS.",
         image: "/img/projects/portfolio.png",
         technologies: [
             { id: 1, name: "React", icon: "" },
             { id: 2, name: "TypeScript", icon: "" },
             { id: 3, name: "Tailwind CSS", icon: "" },
-            { id: 4, name: "Vite", icon: "" }
+            { id: 4, name: "Vite", icon: "" },
+            { id: 5, name: "EmailJS", icon: "" },
+            { id: 6, name: "React Toastify", icon: "" }
         ],
         demoUrl: "https://portfolio-jmmg.netlify.app/",
         githubUrl: "https://github.com/devjmmg/Portfolio.git",

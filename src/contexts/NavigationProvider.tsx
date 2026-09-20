@@ -13,7 +13,7 @@ interface NavigationContextType {
 }
 
 const NavigationContext = createContext<NavigationContextType>({
-    activeSection: "#inicio",
+    activeSection: "#home",
     setActiveSection: () => {}
 });
 
@@ -22,6 +22,8 @@ const NavigationProvider = ({ children }: { children: ReactNode }) => {
     const [activeSection, setActiveSection] = useState("#home");
 
     useEffect(() => {
+
+        let isScrollingByClick = false;
 
         const handleClick = (e: Event) => {
             e.preventDefault();
@@ -35,40 +37,65 @@ const NavigationProvider = ({ children }: { children: ReactNode }) => {
 
             const element = document.querySelector(href);
 
-            element?.scrollIntoView({
+            if (!element) {
+                return;
+            }
+
+            isScrollingByClick = true;
+
+            setActiveSection(href);
+
+            element.scrollIntoView({
                 behavior: "smooth"
             });
 
-            setActiveSection(href);
-        }
-        const handleScroll = () => {
-            const sections = document.querySelectorAll("main[id], section[id]");
-            let current = '';
+            setTimeout(() => {
+                isScrollingByClick = false;
+            }, 700);
+        };
 
-            sections.forEach( section => {
+        const handleScroll = () => {
+
+            if (isScrollingByClick) {
+                return;
+            }
+
+            const sections = document.querySelectorAll("main[id], section[id]");
+
+            let current = "";
+
+            sections.forEach(section => {
 
                 const element = section as HTMLElement;
                 const top = element.offsetTop - 100;
+
                 if (window.scrollY >= top) {
                     current = element.id;
                 }
             });
+
             if (current) {
                 setActiveSection(`#${current}`);
             }
-        }
+        };
+
         const links = document.querySelectorAll(".link");
-        links?.forEach(link => {
+
+        links.forEach(link => {
             link.addEventListener("click", handleClick);
         });
-        window.addEventListener('scroll', handleScroll);
+
+        window.addEventListener("scroll", handleScroll);
+
         return () => {
+
             window.removeEventListener("scroll", handleScroll);
 
             links.forEach(link => {
                 link.removeEventListener("click", handleClick);
             });
         };
+
     }, []);
 
     return (
