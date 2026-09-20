@@ -91,11 +91,11 @@ export const skills: Skill[] = [
                 name: "MySQL",
                 icon: "/img/icons/mysql.svg"
             },
-            {
-                id: 2,
-                name: "MongoDB",
-                icon: "/img/icons/mongodb.svg"
-            }
+            // {
+            //     id: 2,
+            //     name: "MongoDB",
+            //     icon: "/img/icons/mongodb.svg"
+            // }
         ]
     },
     {
