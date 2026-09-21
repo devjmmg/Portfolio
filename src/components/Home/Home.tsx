@@ -82,7 +82,7 @@ export default function Home() {
                 <div className="absolute top-0 right-0 w-40 h-40 md:w-72 md:h-72 lg:w-96 lg:h-96 rounded-full bg-indigo-950/30 blur-3xl"></div>
 
                 <img
-                    src="/img/me.png"
+                    src="/img/me.webp"
                     alt="Juan Manuel Martínez García"
                     className="relative w-md md:w-xl mx-auto h-auto block mask-b-from-80% border-b border-white"
                 />
